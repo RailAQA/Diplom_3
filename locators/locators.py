@@ -6,7 +6,7 @@ class ConstructorPageLocators:
     INGREDIENT_POPUP = (By.XPATH, '//div[@class="Modal_modal__contentBox__sCy8X pt-10 pb-15"]')
     CROSS_POPUP_BUTTON = (By.XPATH, '//button[contains(@class,"close")]')
     INGREDIENT_DETAILS_POPUP = (By.XPATH, '//h2[text()="Детали ингредиента"]')
-    INGREDIENT_COUNTER = (By.XPATH, '//ul[1]/a[1]//p[contains(@class, "num")]')
+    INGREDIENT_COUNTER = (By.XPATH, "//p[text()='Флюоресцентная булка R2-D3']/preceding-sibling::div//p[contains(@class, 'counter_counter__num')]")
     ORDER_BASKET = (By.XPATH, "//span[@class='constructor-element__text' and text()='Перетяните булочку сюда (низ)']")
     CREATE_ORDER_BUTTON = By.XPATH, '//button[text()="Оформить заказ"]'
     ORDER_IDENTIFICATE = (By.XPATH, '//p[text()="идентификатор заказа"]')
