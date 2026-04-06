@@ -27,7 +27,7 @@ class ConstructorPage(BasePage):
 
     @allure.step('Проверяем, что закрылся попап с деталями ингриндиента')
     def check_invisibility_ingredient_details(self):
-        self.check_not_visible(ConstructorPageLocators.INGREDIENT_DETAILS_POPUP)
+        return self.check_not_visible(ConstructorPageLocators.INGREDIENT_DETAILS_POPUP)
 
     @allure.step('Проверяем, что есть попап с деталями ингриндиента')
     def check_displayed_ingredient_details(self):

@@ -1,3 +1,5 @@
+import pytest
+
 from pages.constructor_page import ConstructorPage
 from tools.routes import AppRoute
 
@@ -32,7 +34,8 @@ class TestConstructorPage:
         main_page.visit(url=AppRoute.BASE)
         main_page.click_on_ingredient()
         main_page.click_cross_popup_button()
-        main_page.check_invisibility_ingredient_details()
+        ingrendient_details_popup_is_closed = main_page.check_invisibility_ingredient_details()
+        assert ingrendient_details_popup_is_closed
 
     @allure.title('При добавлении ингридиента в заказ, счетчик заказа увеличивается')
     def test_ingredient_counter(self, driver):

@@ -2,6 +2,7 @@ from selenium import webdriver
 import pytest
 
 from pages.login_page import LoginPage
+from tools.routes import AppRoute
 
 @pytest.fixture(params=['chrome', 'firefox'])
 def driver(request):
@@ -19,7 +20,7 @@ def driver(request):
 @pytest.fixture
 def auth_driver(driver):
     login_page = LoginPage(driver)
-    login_page.visit("https://stellarburgers.education-services.ru/login")
+    login_page.visit(AppRoute.LOGIN)
     login_page.auth()
     return driver
     

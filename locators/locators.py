@@ -16,12 +16,11 @@ class ConstructorPageLocators:
 class OrderPageLocators:
     ORDERS_TITLE = (By.XPATH, '//h1[text()="Лента заказов"]')
     CONSTRUCTOR_BUTTON = (By.XPATH, "//a[@class='AppHeader_header__link__3D_hX'][@href='/']")
-    CURRENT_COUNT_ORDERS_ALL = (By.XPATH, '//*[@id="root"]/div/main/div/div/div/div[2]/p[2]')
-    CURRENT_COUNT_ORDERS_TODAT = (By.XPATH, '//*[@id="root"]/div/main/div/div/div/div[3]/p[2]')
-    NUMBER_IN_PROGRESS = (By.XPATH, ".//ul[@class='OrderFeed_orderListReady__1YFem "
-                                         "OrderFeed_orderList__cBvyi']/li[@class='text text_type_digits-default mb-2']")
+    CURRENT_COUNT_ORDERS_ALL = (By.XPATH, "//div[p[contains(text(), 'Выполнено за все время')]]//p[contains(@class, 'text_type_digits-large')]")
+    CURRENT_COUNT_ORDERS_TODAT = (By.XPATH, "//div[p[contains(text(), 'Выполнено за сегодня')]]//p[contains(@class, 'text_type_digits-large')]")
+    NUMBER_IN_PROGRESS = (By.XPATH, ".//ul[contains(@class, 'OrderFeed_orderListReady')]/li[contains(@class, 'text_type_digits-default')]")
 
 class LoginPageLocators:
-    EMAIL_INPUT = (By.XPATH, '//input[@class="text input__textfield text_type_main-default"]')
-    PASSWORD_INPUT = (By.XPATH, '//*[@id="root"]/div/main/div/form/fieldset[2]/div/div/input')
+    EMAIL_INPUT = (By.XPATH, "//input[@type='text' and @name='name']")
+    PASSWORD_INPUT = (By.XPATH, "//input[@type='password' and @name='Пароль']")
     LOGIN_BUTTON = By.XPATH, '//button[text()="Войти"]'

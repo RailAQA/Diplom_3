@@ -42,8 +42,7 @@ class BasePage:
                 return True
         except TimeoutException:
             with allure.step(f"Ошибка: элемент с локатором: {locator} все еще виден"):
-                element = self.driver.find_element(*locator)
-                assert not element.is_displayed(), f"Элемент {locator} все еще виден"
+                return False
 
     def check_have_text(self, locator: str, text: str, nth: int = 0):
         element = self.get_locator(locator=locator, nth=nth)     
